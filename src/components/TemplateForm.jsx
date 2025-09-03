@@ -45,7 +45,10 @@ const TemplateForm = ({ onSubmit, initialData = null, buttonText }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-gray-200 p-6 rounded-lg mb-6">
+    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md max-w-xl mx-auto">
+      <h2 className="text-xl font-semibold mb-4 text-gray-700">
+        {initialData ? 'Edit Template' : 'Create New Template'}
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div>
           <label className="block text-gray-700 font-bold mb-2">Type</label>
@@ -55,7 +58,7 @@ const TemplateForm = ({ onSubmit, initialData = null, buttonText }) => {
             value={formData.type}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
           />
         </div>
         <div>
@@ -66,7 +69,7 @@ const TemplateForm = ({ onSubmit, initialData = null, buttonText }) => {
             value={formData.author}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
           />
         </div>
       </div>
@@ -77,7 +80,7 @@ const TemplateForm = ({ onSubmit, initialData = null, buttonText }) => {
           value={formData.content}
           onChange={handleChange}
           required
-          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300 h-32"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200 h-32"
         ></textarea>
       </div>
       <div className="mb-4">
@@ -87,12 +90,12 @@ const TemplateForm = ({ onSubmit, initialData = null, buttonText }) => {
           name="labels"
           value={formData.labels}
           onChange={handleChange}
-          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
         />
       </div>
       <button
         type="submit"
-        className="w-full bg-green-500 text-white font-bold py-2 px-4 rounded-md hover:bg-green-600 transition-colors"
+        className="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring focus:ring-blue-200"
       >
         {buttonText}
       </button>
